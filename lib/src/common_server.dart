@@ -81,6 +81,7 @@ class CommonServer {
         exit(code);
       }
     });
+    await warmup();
   }
 
   Future warmup({bool useHtml: false}) async {
@@ -94,7 +95,6 @@ class CommonServer {
     log.info('Analysis Servers shutdown');
 
     await init();
-    await warmup();
 
     log.warning('Restart complete');
   }
