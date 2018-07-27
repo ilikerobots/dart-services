@@ -82,8 +82,8 @@ void defineTests() {
       apiServer.addApi(server);
     });
 
-    tearDownAll(() {
-      return server.shutdown();
+    tearDownAll(() async {
+      await server.shutdown();
     });
 
     setUp(() {
